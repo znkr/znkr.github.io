@@ -1,6 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="de-DE">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:700&display=swap" rel="stylesheet">
+    <title>znkr.io</title>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        body {
+            background-color: #444;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            margin: 0;
+            color: #222;
+            text-shadow: 0 1px 1px #777;
+            font-family: 'Oleo Script Swash Caps', cursive;
+            font-size: 100pt;
+        }
+    </style>
+    <script>
+        const list = Array('fckafd', 'niecdu', 'niecsu');
+        let p = 1.0;
+        function txt() {
+            document.getElementById('txt').innerText = list[~~(list.length * Math.random())];
+            p = Math.max(p - 0.01, 0);
+            let q = p*p*p;
+            let n = 42 + q * (2500 - 42);
+            setTimeout(txt, n + Math.random() * n);
+        }
+        setTimeout(txt, 15000 + Math.random() * 5000);
+    </script>
+</head>
 <body>
-<h1>Moin!</h1>
+<h1 id="txt">moin</h1>
 </body>
 </html>
