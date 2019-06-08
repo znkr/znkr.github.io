@@ -8,6 +8,7 @@
             margin: 0;
             height: 100%;
         }
+
         body {
             background-color: #444;
 
@@ -15,6 +16,7 @@
             align-items: center;
             justify-content: center;
         }
+
         h1 {
             margin: 0;
             color: #222;
@@ -24,16 +26,34 @@
         }
     </style>
     <script>
-        const list = Array('fckafd', 'niecdu', 'niecsu');
+        const shouts = new Map([
+            ['fckafd', 8],
+            ['niecdu', 5],
+            ['niecsu', 2],
+            ['lolspd', 1],
+            ['wtffdp', 1],
+        ]);
+
+        const lut = function () {
+            let l = Array();
+            for (const [s, n] of shouts) {
+                for (let i = 0; i < n; i++) {
+                    l.push(s)
+                }
+            }
+            return l;
+        }();
+
         let p = 1.0;
-        function txt() {
-            document.getElementById('txt').innerText = list[~~(list.length * Math.random())];
+
+        function shout() {
+            document.getElementById('txt').innerText = lut[~~(lut.length * Math.random())];
             p = Math.max(p - 0.01, 0);
-            let q = p*p*p;
-            let n = 42 + q * (2500 - 42);
-            setTimeout(txt, n + Math.random() * n);
+            let n = 42 + (p * p * p * p) * (2500 - 42);
+            setTimeout(shout, n + Math.random() * n);
         }
-        setTimeout(txt, 15000 + Math.random() * 5000);
+
+        setTimeout(shout, 15000 + Math.random() * 5000);
     </script>
 </head>
 <body>
