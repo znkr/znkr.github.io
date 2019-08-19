@@ -25,36 +25,6 @@
             font-size: 100pt;
         }
     </style>
-    <script>
-        const shouts = new Map([
-            ['fckafd', 8],
-            ['niecdu', 5],
-            ['niecsu', 2],
-            ['lolspd', 1],
-            ['wtffdp', 1],
-        ]);
-
-        const lut = function () {
-            let l = Array();
-            for (const [s, n] of shouts) {
-                for (let i = 0; i < n; i++) {
-                    l.push(s)
-                }
-            }
-            return l;
-        }();
-
-        let p = 1.0;
-
-        function shout() {
-            document.getElementById('txt').innerText = lut[~~(lut.length * Math.random())];
-            p = Math.max(p - 0.01, 0);
-            let n = 42 + (p * p * p * p) * (2500 - 42);
-            setTimeout(shout, n + Math.random() * n);
-        }
-
-        setTimeout(shout, 15000 + Math.random() * 5000);
-    </script>
 </head>
 <body>
 <h1 id="txt">moin</h1>
