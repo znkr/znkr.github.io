@@ -1,30 +1,11 @@
-@font-face {
-    font-family: 'Oleo Script Swash Caps';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),
-        url('oleo-script-swash-caps-v13-latin-regular.woff2') format('woff2'),
-        url('oleo-script-swash-caps-v13-latin-regular.woff') format('woff');
-}
-
-html,
 body {
     margin: 0;
-    height: 100%;
+    background-color: #000000;
 }
-
-body {
-    background-color: #444;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-h1 {
+canvas {
+    display: block;  /* prevents scrollbar */
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
     margin: 0;
-    color: #222;
-    text-shadow: 0 1px 1px #777;
-    font-family: 'Oleo Script Swash Caps', cursive;
-    font-size: 100pt;
 }
